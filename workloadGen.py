@@ -116,7 +116,7 @@ def main():
                     f.write(WorkloadTxt)
                     f.close()
 
-                    ScriptTxt = ScriptTxt + f"\tfilebench -f workloads/{expName}" +"\n"
+                    ScriptTxt = ScriptTxt + f"\tfilebench -f workloads/{expName} > results/{expName}_${{i}}.result" +"\n"
     
     f = open("exp.sh", "+w")
     f.write(f"for i in {{1..{Ntry}}}\ndo\n {ScriptTxt} done")

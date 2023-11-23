@@ -1,75 +1,75 @@
-for i in {1..10}
+for i in {1..3}
 do
  	filebench -f workloads/fileserver_pmem_1nt_100knf.f > results/fileserver_pmem_1nt_100knf.f_${i}.result
+	filebench -f workloads/fileserver_pmem_1nt_400knf.f > results/fileserver_pmem_1nt_400knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_1nt_800knf.f > results/fileserver_pmem_1nt_800knf.f_${i}.result
-	filebench -f workloads/fileserver_pmem_1nt_3.2mnf.f > results/fileserver_pmem_1nt_3.2mnf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_5nt_100knf.f > results/fileserver_pmem_5nt_100knf.f_${i}.result
+	filebench -f workloads/fileserver_pmem_5nt_400knf.f > results/fileserver_pmem_5nt_400knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_5nt_800knf.f > results/fileserver_pmem_5nt_800knf.f_${i}.result
-	filebench -f workloads/fileserver_pmem_5nt_3.2mnf.f > results/fileserver_pmem_5nt_3.2mnf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_10nt_100knf.f > results/fileserver_pmem_10nt_100knf.f_${i}.result
+	filebench -f workloads/fileserver_pmem_10nt_400knf.f > results/fileserver_pmem_10nt_400knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_10nt_800knf.f > results/fileserver_pmem_10nt_800knf.f_${i}.result
-	filebench -f workloads/fileserver_pmem_10nt_3.2mnf.f > results/fileserver_pmem_10nt_3.2mnf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_25nt_100knf.f > results/fileserver_pmem_25nt_100knf.f_${i}.result
+	filebench -f workloads/fileserver_pmem_25nt_400knf.f > results/fileserver_pmem_25nt_400knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_25nt_800knf.f > results/fileserver_pmem_25nt_800knf.f_${i}.result
-	filebench -f workloads/fileserver_pmem_25nt_3.2mnf.f > results/fileserver_pmem_25nt_3.2mnf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_50nt_100knf.f > results/fileserver_pmem_50nt_100knf.f_${i}.result
+	filebench -f workloads/fileserver_pmem_50nt_400knf.f > results/fileserver_pmem_50nt_400knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_50nt_800knf.f > results/fileserver_pmem_50nt_800knf.f_${i}.result
-	filebench -f workloads/fileserver_pmem_50nt_3.2mnf.f > results/fileserver_pmem_50nt_3.2mnf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_100nt_100knf.f > results/fileserver_pmem_100nt_100knf.f_${i}.result
+	filebench -f workloads/fileserver_pmem_100nt_400knf.f > results/fileserver_pmem_100nt_400knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_100nt_800knf.f > results/fileserver_pmem_100nt_800knf.f_${i}.result
-	filebench -f workloads/fileserver_pmem_100nt_3.2mnf.f > results/fileserver_pmem_100nt_3.2mnf.f_${i}.result
 	filebench -f workloads/varmail_pmem_1nt_100knf.f > results/varmail_pmem_1nt_100knf.f_${i}.result
 	filebench -f workloads/varmail_pmem_1nt_800knf.f > results/varmail_pmem_1nt_800knf.f_${i}.result
-	filebench -f workloads/varmail_pmem_1nt_8mnf.f > results/varmail_pmem_1nt_8mnf.f_${i}.result
+	filebench -f workloads/varmail_pmem_1nt_1mnf.f > results/varmail_pmem_1nt_1mnf.f_${i}.result
 	filebench -f workloads/varmail_pmem_5nt_100knf.f > results/varmail_pmem_5nt_100knf.f_${i}.result
 	filebench -f workloads/varmail_pmem_5nt_800knf.f > results/varmail_pmem_5nt_800knf.f_${i}.result
-	filebench -f workloads/varmail_pmem_5nt_8mnf.f > results/varmail_pmem_5nt_8mnf.f_${i}.result
+	filebench -f workloads/varmail_pmem_5nt_1mnf.f > results/varmail_pmem_5nt_1mnf.f_${i}.result
 	filebench -f workloads/varmail_pmem_10nt_100knf.f > results/varmail_pmem_10nt_100knf.f_${i}.result
 	filebench -f workloads/varmail_pmem_10nt_800knf.f > results/varmail_pmem_10nt_800knf.f_${i}.result
-	filebench -f workloads/varmail_pmem_10nt_8mnf.f > results/varmail_pmem_10nt_8mnf.f_${i}.result
+	filebench -f workloads/varmail_pmem_10nt_1mnf.f > results/varmail_pmem_10nt_1mnf.f_${i}.result
 	filebench -f workloads/varmail_pmem_25nt_100knf.f > results/varmail_pmem_25nt_100knf.f_${i}.result
 	filebench -f workloads/varmail_pmem_25nt_800knf.f > results/varmail_pmem_25nt_800knf.f_${i}.result
-	filebench -f workloads/varmail_pmem_25nt_8mnf.f > results/varmail_pmem_25nt_8mnf.f_${i}.result
+	filebench -f workloads/varmail_pmem_25nt_1mnf.f > results/varmail_pmem_25nt_1mnf.f_${i}.result
 	filebench -f workloads/varmail_pmem_50nt_100knf.f > results/varmail_pmem_50nt_100knf.f_${i}.result
 	filebench -f workloads/varmail_pmem_50nt_800knf.f > results/varmail_pmem_50nt_800knf.f_${i}.result
-	filebench -f workloads/varmail_pmem_50nt_8mnf.f > results/varmail_pmem_50nt_8mnf.f_${i}.result
+	filebench -f workloads/varmail_pmem_50nt_1mnf.f > results/varmail_pmem_50nt_1mnf.f_${i}.result
 	filebench -f workloads/varmail_pmem_100nt_100knf.f > results/varmail_pmem_100nt_100knf.f_${i}.result
 	filebench -f workloads/varmail_pmem_100nt_800knf.f > results/varmail_pmem_100nt_800knf.f_${i}.result
-	filebench -f workloads/varmail_pmem_100nt_8mnf.f > results/varmail_pmem_100nt_8mnf.f_${i}.result
+	filebench -f workloads/varmail_pmem_100nt_1mnf.f > results/varmail_pmem_100nt_1mnf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_1nt_100knf.f > results/webproxy_pmem_1nt_100knf.f_${i}.result
+	filebench -f workloads/webproxy_pmem_1nt_500knf.f > results/webproxy_pmem_1nt_500knf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_1nt_800knf.f > results/webproxy_pmem_1nt_800knf.f_${i}.result
-	filebench -f workloads/webproxy_pmem_1nt_8mnf.f > results/webproxy_pmem_1nt_8mnf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_5nt_100knf.f > results/webproxy_pmem_5nt_100knf.f_${i}.result
+	filebench -f workloads/webproxy_pmem_5nt_500knf.f > results/webproxy_pmem_5nt_500knf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_5nt_800knf.f > results/webproxy_pmem_5nt_800knf.f_${i}.result
-	filebench -f workloads/webproxy_pmem_5nt_8mnf.f > results/webproxy_pmem_5nt_8mnf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_10nt_100knf.f > results/webproxy_pmem_10nt_100knf.f_${i}.result
+	filebench -f workloads/webproxy_pmem_10nt_500knf.f > results/webproxy_pmem_10nt_500knf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_10nt_800knf.f > results/webproxy_pmem_10nt_800knf.f_${i}.result
-	filebench -f workloads/webproxy_pmem_10nt_8mnf.f > results/webproxy_pmem_10nt_8mnf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_25nt_100knf.f > results/webproxy_pmem_25nt_100knf.f_${i}.result
+	filebench -f workloads/webproxy_pmem_25nt_500knf.f > results/webproxy_pmem_25nt_500knf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_25nt_800knf.f > results/webproxy_pmem_25nt_800knf.f_${i}.result
-	filebench -f workloads/webproxy_pmem_25nt_8mnf.f > results/webproxy_pmem_25nt_8mnf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_50nt_100knf.f > results/webproxy_pmem_50nt_100knf.f_${i}.result
+	filebench -f workloads/webproxy_pmem_50nt_500knf.f > results/webproxy_pmem_50nt_500knf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_50nt_800knf.f > results/webproxy_pmem_50nt_800knf.f_${i}.result
-	filebench -f workloads/webproxy_pmem_50nt_8mnf.f > results/webproxy_pmem_50nt_8mnf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_100nt_100knf.f > results/webproxy_pmem_100nt_100knf.f_${i}.result
+	filebench -f workloads/webproxy_pmem_100nt_500knf.f > results/webproxy_pmem_100nt_500knf.f_${i}.result
 	filebench -f workloads/webproxy_pmem_100nt_800knf.f > results/webproxy_pmem_100nt_800knf.f_${i}.result
-	filebench -f workloads/webproxy_pmem_100nt_8mnf.f > results/webproxy_pmem_100nt_8mnf.f_${i}.result
 	filebench -f workloads/webserver_pmem_1nt_100knf.f > results/webserver_pmem_1nt_100knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_1nt_800knf.f > results/webserver_pmem_1nt_800knf.f_${i}.result
-	filebench -f workloads/webserver_pmem_1nt_4mnf.f > results/webserver_pmem_1nt_4mnf.f_${i}.result
+	filebench -f workloads/webserver_pmem_1nt_1mnf.f > results/webserver_pmem_1nt_1mnf.f_${i}.result
 	filebench -f workloads/webserver_pmem_5nt_100knf.f > results/webserver_pmem_5nt_100knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_5nt_800knf.f > results/webserver_pmem_5nt_800knf.f_${i}.result
-	filebench -f workloads/webserver_pmem_5nt_4mnf.f > results/webserver_pmem_5nt_4mnf.f_${i}.result
+	filebench -f workloads/webserver_pmem_5nt_1mnf.f > results/webserver_pmem_5nt_1mnf.f_${i}.result
 	filebench -f workloads/webserver_pmem_10nt_100knf.f > results/webserver_pmem_10nt_100knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_10nt_800knf.f > results/webserver_pmem_10nt_800knf.f_${i}.result
-	filebench -f workloads/webserver_pmem_10nt_4mnf.f > results/webserver_pmem_10nt_4mnf.f_${i}.result
+	filebench -f workloads/webserver_pmem_10nt_1mnf.f > results/webserver_pmem_10nt_1mnf.f_${i}.result
 	filebench -f workloads/webserver_pmem_25nt_100knf.f > results/webserver_pmem_25nt_100knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_25nt_800knf.f > results/webserver_pmem_25nt_800knf.f_${i}.result
-	filebench -f workloads/webserver_pmem_25nt_4mnf.f > results/webserver_pmem_25nt_4mnf.f_${i}.result
+	filebench -f workloads/webserver_pmem_25nt_1mnf.f > results/webserver_pmem_25nt_1mnf.f_${i}.result
 	filebench -f workloads/webserver_pmem_50nt_100knf.f > results/webserver_pmem_50nt_100knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_50nt_800knf.f > results/webserver_pmem_50nt_800knf.f_${i}.result
-	filebench -f workloads/webserver_pmem_50nt_4mnf.f > results/webserver_pmem_50nt_4mnf.f_${i}.result
+	filebench -f workloads/webserver_pmem_50nt_1mnf.f > results/webserver_pmem_50nt_1mnf.f_${i}.result
 	filebench -f workloads/webserver_pmem_100nt_100knf.f > results/webserver_pmem_100nt_100knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_100nt_800knf.f > results/webserver_pmem_100nt_800knf.f_${i}.result
-	filebench -f workloads/webserver_pmem_100nt_4mnf.f > results/webserver_pmem_100nt_4mnf.f_${i}.result
+	filebench -f workloads/webserver_pmem_100nt_1mnf.f > results/webserver_pmem_100nt_1mnf.f_${i}.result
  done

@@ -83,16 +83,16 @@ NAME_VALMAIL    = "varmail"
 NAME_WEBPROXY   = "webproxy"
 NAME_WEBSERVER  = "webserver"
 
-Ntry = 10
+Ntry = 3
 workloads = [NAME_FILESERVER, NAME_VALMAIL, NAME_WEBPROXY, NAME_WEBSERVER]
 nthreads = [1, 5, 10, 25, 50, 100]
 memtype = ["pmem"]
 
 nfiles = {
-    NAME_FILESERVER: ["100k", "800k", "3.2m"],
-    NAME_VALMAIL   : ["100k", "800k", "8m"],
-    NAME_WEBPROXY  : ["100k", "800k", "8m"],
-    NAME_WEBSERVER : ["100k", "800k", "4m"]
+    NAME_FILESERVER: ["100k", "400k", "800k"],
+    NAME_VALMAIL   : ["100k", "800k", "1m"],
+    NAME_WEBPROXY  : ["100k", "500k", "800k"],
+    NAME_WEBSERVER : ["100k", "800k", "1m"]
 }
 
 wfunction = {

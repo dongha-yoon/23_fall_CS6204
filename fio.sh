@@ -23,7 +23,7 @@ do_fio() {
 export PMEM_IS_PMEM_FORCE=1
 for wl in $fioworkloads
 do
-	do_fio(wl) &
-	do_lmbench(wl)
+	do_fio($wl) &
+	do_lmbench($wl)
 done
 

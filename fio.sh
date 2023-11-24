@@ -1,4 +1,4 @@
-fioworkloads = ["rr", "rw", "sr" ,"sw"]
+fioworkloads=("rr" "rw" "sr" "sw")
 
 do_lmbench() {
 	fioname = $1

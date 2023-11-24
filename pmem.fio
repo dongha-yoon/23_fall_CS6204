@@ -60,7 +60,7 @@ cpus_allowed_policy=split
 # as iostat will not provide useful data.
 #
 #filename=/mnt/pmem/somefile
-directory=/mnt/fio
+directory=/mnt/pmem
 
 [libpmem-seqwrite]
 rw=write

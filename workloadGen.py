@@ -83,7 +83,7 @@ NAME_VALMAIL    = "varmail"
 NAME_WEBPROXY   = "webproxy"
 NAME_WEBSERVER  = "webserver"
 
-Ntry = 10
+Ntry = 3
 workloads = [NAME_FILESERVER, NAME_VALMAIL, NAME_WEBPROXY, NAME_WEBSERVER]
 nthreads = [1, 5, 10, 25, 50, 100]
 memtype = ["pmem"]
@@ -105,7 +105,7 @@ wfunction = {
 
 def main():
     ScriptTxt = ""
-    for wname in workloads:
+    for wname in workloads[2:3]:
         for mt in memtype:
             for nt in nthreads:        
                 for nf in nfiles[wname]:
@@ -118,7 +118,7 @@ def main():
 
                     ScriptTxt = ScriptTxt + f"\tfilebench -f workloads/{expName} > results/{expName}_${{i}}.result" +"\n"
     
-    f = open("exp.sh", "+w")
+    f = open("exp2.sh", "+w")
     f.write(f"for i in {{1..{Ntry}}}\ndo\n {ScriptTxt} done")
     f.close()
     

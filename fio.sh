@@ -16,7 +16,7 @@ do_lmbench() {
 do_fio() {
 	fioname=$1
 	echo "numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}.output"
-	numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}.output >> log
+	numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}.output
 	
 	echo "$fioname done" >> lmbench_res/fio_${fioname}_rd.res
 	echo "$fioname done" >> lmbench_res/fio_${fioname}_wr.res

@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+4.586: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.586: Removing bigfileset tree (if exists)
+12.645: Pre-allocating directories in bigfileset tree
+12.645: Pre-allocating files in bigfileset tree
+198.777: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+198.777: Population and pre-allocation of filesets completed
+198.778: Starting 1 filereader instances
+199.781: Running...
+259.787: Run took 60 seconds...
+259.787: Per-Operation Breakdown
+closefile4           3457616ops    57622ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.188ms]
+readfile4            3457616ops    57622ops/s 1621.9mb/s    0.017ms/op [0.001ms - 61.379ms]
+openfile4            3457617ops    57622ops/s   0.0mb/s    0.005ms/op [0.001ms - 62.188ms]
+closefile3           3457618ops    57622ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.258ms]
+fsyncfile3           3457618ops    57622ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.205ms]
+appendfilerand3      3457619ops    57622ops/s 450.1mb/s    0.014ms/op [0.001ms - 0.898ms]
+readfile3            3457622ops    57622ops/s 1621.9mb/s    0.017ms/op [0.001ms - 61.409ms]
+openfile3            3457622ops    57622ops/s   0.0mb/s    0.005ms/op [0.001ms - 0.921ms]
+closefile2           3457622ops    57622ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.190ms]
+fsyncfile2           3457622ops    57622ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.643ms]
+appendfilerand2      3457623ops    57622ops/s 450.3mb/s    0.013ms/op [0.001ms - 0.810ms]
+createfile2          3457623ops    57622ops/s   0.0mb/s    0.024ms/op [0.007ms - 15.905ms]
+deletefile1          3457626ops    57622ops/s   0.0mb/s    0.016ms/op [0.007ms - 8.748ms]
+259.787: IO Summary: 44949064 ops 749083.312 ops/s 115244/115244 rd/wr 4144.1mb/s 0.009ms/op
+259.787: Shutting down processes

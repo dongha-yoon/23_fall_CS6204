@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+0.418: bigfileset populated: 819200 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 25634.444MB total size
+0.418: Removing bigfileset tree (if exists)
+1.352: Pre-allocating directories in bigfileset tree
+1.352: Pre-allocating files in bigfileset tree
+17.440: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+17.440: Population and pre-allocation of filesets completed
+17.440: Starting 1 filereader instances
+18.446: Running...
+78.451: Run took 60 seconds...
+78.455: Per-Operation Breakdown
+closefile4           3057726ops    50959ops/s   0.0mb/s    0.001ms/op [0.000ms - 120.760ms]
+readfile4            3057727ops    50959ops/s 944.9mb/s    0.014ms/op [0.001ms - 4.194ms]
+openfile4            3057734ops    50959ops/s   0.0mb/s    0.042ms/op [0.001ms - 19.540ms]
+closefile3           3057740ops    50959ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.450ms]
+fsyncfile3           3057740ops    50959ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.201ms]
+appendfilerand3      3057743ops    50959ops/s 398.1mb/s    0.016ms/op [0.001ms - 0.451ms]
+readfile3            3057744ops    50959ops/s 944.6mb/s    0.014ms/op [0.001ms - 6.787ms]
+openfile3            3057749ops    50959ops/s   0.0mb/s    0.042ms/op [0.001ms - 15.540ms]
+closefile2           3057758ops    50959ops/s   0.0mb/s    0.001ms/op [0.000ms - 137.906ms]
+fsyncfile2           3057758ops    50959ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.163ms]
+appendfilerand2      3057759ops    50959ops/s 397.9mb/s    0.016ms/op [0.004ms - 0.487ms]
+createfile2          3057767ops    50959ops/s   0.0mb/s    0.174ms/op [0.009ms - 455.903ms]
+deletefile1          3057773ops    50960ops/s   0.0mb/s    0.177ms/op [0.008ms - 456.050ms]
+78.455: IO Summary: 39750718 ops 662468.465 ops/s 101918/101918 rd/wr 2685.6mb/s 0.038ms/op
+78.455: Shutting down processes

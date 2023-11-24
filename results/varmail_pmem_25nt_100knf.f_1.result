@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+0.050: bigfileset populated: 102400 files, avg. dir. width = 1000000, avg. dir. depth = 0.8, 0 leafdirs, 3202.118MB total size
+0.050: Removing bigfileset tree (if exists)
+74.281: Pre-allocating directories in bigfileset tree
+74.281: Pre-allocating files in bigfileset tree
+76.195: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+76.195: Population and pre-allocation of filesets completed
+76.195: Starting 1 filereader instances
+77.200: Running...
+137.205: Run took 60 seconds...
+137.206: Per-Operation Breakdown
+closefile4           3635020ops    60579ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.154ms]
+readfile4            3635021ops    60579ops/s 966.7mb/s    0.013ms/op [0.001ms - 0.258ms]
+openfile4            3635021ops    60579ops/s   0.0mb/s    0.007ms/op [0.001ms - 0.299ms]
+closefile3           3635023ops    60579ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.164ms]
+fsyncfile3           3635023ops    60579ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.160ms]
+appendfilerand3      3635024ops    60579ops/s 473.1mb/s    0.016ms/op [0.001ms - 0.356ms]
+readfile3            3635025ops    60579ops/s 967.0mb/s    0.013ms/op [0.001ms - 0.232ms]
+openfile3            3635026ops    60579ops/s   0.0mb/s    0.007ms/op [0.001ms - 16.200ms]
+closefile2           3635026ops    60579ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.193ms]
+fsyncfile2           3635026ops    60579ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.152ms]
+appendfilerand2      3635026ops    60579ops/s 473.2mb/s    0.015ms/op [0.004ms - 0.221ms]
+createfile2          3635037ops    60580ops/s   0.0mb/s    0.111ms/op [0.008ms - 94.202ms]
+deletefile1          3635043ops    60580ops/s   0.0mb/s    0.148ms/op [0.008ms - 102.774ms]
+137.206: IO Summary: 47255341 ops 787531.356 ops/s 121159/121159 rd/wr 2880.0mb/s 0.026ms/op
+137.206: Shutting down processes

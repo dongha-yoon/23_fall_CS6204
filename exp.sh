@@ -73,3 +73,5 @@ do
 	filebench -f workloads/webserver_pmem_100nt_800knf.f > results/webserver_pmem_100nt_800knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_100nt_4mnf.f > results/webserver_pmem_100nt_4mnf.f_${i}.result
  done
+
+ ./fio.sh

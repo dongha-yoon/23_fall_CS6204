@@ -3,12 +3,12 @@ fioworkloads=("rr" "rw" "sr" "sw")
 do_lmbench() {
 	fioname=$1
 
-	for i in {1..10}
+	for i in {1..15}
 	do
 		echo "start lmbench $1 tr $i"
-		numactl -C 8-15 ../lmbench/bin/x86_64-linux-gnu/bw_mem -P 8 16k rd 2>> lmbench_res/fio_${fioname}_rd.res
-		numactl -C 8-15 ../lmbench/bin/x86_64-linux-gnu/bw_mem -P 8 16k wr 2>> lmbench_res/fio_${fioname}_wr.res
-		numactl -C 8-15 ../lmbench/bin/x86_64-linux-gnu/bw_mem -P 8 16k rdwr 2>> lmbench_res/fio_${fioname}_rdwr.res
+		numactl -C 8-15 ../lmbench/bin/x86_64-linux-gnu/bw_mem -P 8 16m rd 2>> lmbench_res/fio_${fioname}_rd.res
+		numactl -C 8-15 ../lmbench/bin/x86_64-linux-gnu/bw_mem -P 8 16m wr 2>> lmbench_res/fio_${fioname}_wr.res
+		numactl -C 8-15 ../lmbench/bin/x86_64-linux-gnu/bw_mem -P 8 16m rdwr 2>> lmbench_res/fio_${fioname}_rdwr.res
 	done
 	echo "lmbench $1 done"
 }
@@ -31,9 +31,8 @@ rm fio_res/*
 
 for wl in $fioworkloads
 do
-	# do_fio $wl 
+	do_fio $wl 
 	do_fio $wl &
-	sleep 10s
 	do_lmbench $wl
 done
 

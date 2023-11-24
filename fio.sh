@@ -1,7 +1,7 @@
 fioworkloads=("rr" "rw" "sr" "sw")
 
 do_lmbench() {
-	fioname=$0
+	fioname=$1
 
 	for i in {1..5}
 	do
@@ -12,7 +12,7 @@ do_lmbench() {
 }
 
 do_fio() {
-	fioname=$0
+	fioname=$1
 	numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}.output
 	echo "$fioname done" >> lmbench_res/fio_${fioname}_rd.res
 	echo "$fioname done" >> lmbench_res/fio_${fioname}_wr.res
@@ -21,9 +21,13 @@ do_fio() {
 
 
 export PMEM_IS_PMEM_FORCE=1
+
+rm lmbench_res/*
+rm fio_res/*
+
 for wl in $fioworkloads
 do
-	do_fio $wl &
-	do_lmbench $wl
+	do_fio tt $wl &
+	do_lmbench tt $wl
 done
 

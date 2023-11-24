@@ -29,7 +29,7 @@ rm fio_res/*
 
 for wl in $fioworkloads
 do
-	do_fio tt $wl &
-	do_lmbench tt $wl
+	do_fio $wl &
+	do_lmbench $wl
 done
 

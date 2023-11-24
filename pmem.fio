@@ -14,7 +14,7 @@ clat_percentiles=0
 iodepth=1
 iodepth_batch=1
 thread
-numjobs=8
+numjobs=1
 runtime=300
 
 direct=1
@@ -24,6 +24,7 @@ sync=1
 scramble_buffers=1
 #numa_cpu_nodes=4-7
 cpus_allowed_policy=split
+
 
 directory=/mnt/pmem/fio
 

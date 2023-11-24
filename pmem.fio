@@ -22,7 +22,7 @@ direct=1
 sync=1
 
 scramble_buffers=1
-numa_cpu_nodes=0-7
+numa_cpu_nodes=0,1,2,3,4,5,6,7
 cpus_allowed_policy=split
 
 directory=/mnt/pmem/fio

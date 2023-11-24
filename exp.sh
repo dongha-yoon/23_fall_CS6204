@@ -73,3 +73,10 @@ do
 	filebench -f workloads/webserver_pmem_100nt_800knf.f > results/webserver_pmem_100nt_800knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_100nt_4mnf.f > results/webserver_pmem_100nt_4mnf.f_${i}.result
  done
+
+
+ sudo fio --name=write_throughput --directory=/mnt/fio --numjobs=16 \
+--size=10G --time_based --runtime=60s --ramp_time=2s --ioengine=libaio \
+--direct=1 --verify=0 --bs=1M --iodepth=64 --rw=write \
+--group_reporting=1 --iodepth_batch_submit=64 \
+--iodepth_batch_complete_max=64

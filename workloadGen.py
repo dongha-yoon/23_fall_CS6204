@@ -85,7 +85,7 @@ NAME_WEBSERVER  = "webserver"
 
 Ntry = 3
 workloads = [NAME_FILESERVER, NAME_VALMAIL, NAME_WEBPROXY, NAME_WEBSERVER]
-nthreads = [1, 5, 10, 25, 50, 100]
+nthreads = ["1", "5", "10", "25", "50", "100"]
 memtype = ["pmem"]
 
 nfiles = {
@@ -103,7 +103,7 @@ wfunction = {
 }
 
 
-def main():
+def genworkload():
     ScriptTxt = ""
     for wname in workloads[2:3]:
         for mt in memtype:
@@ -122,4 +122,69 @@ def main():
     f.write(f"for i in {{1..{Ntry}}}\ndo\n {ScriptTxt} done")
     f.close()
     
+
+import re
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plot():
+    
+    # X = nthreads
+    # Y = bw/tp
+    # legend = nfiles
+    
+    for wname in workloads:
+        for mt in memtype:
+            TP = []
+            BW = []
+            for nf in nfiles[wname]:    
+                t = []
+                b = []
+                for nt in nthreads:    
+                    throughput = 0
+                    bandwidth = 0
+                    for tr in range(1,Ntry+1):
+                        fname = f"results/{wname}_{mt}_{nt}nt_{nf}nf.f_{tr}.result"
+                        f = open(fname, "r")
+                        res = f.readlines()[-2]
+                        res = re.findall("\d+\.\d+", res)
+                        throughput += float(res[1])
+                        bandwidth += float(res[2])
+                        
+                    t.append(throughput)
+                    b.append(bandwidth)
+                
+                TP.append(t)
+                BW.append(b)
+            
+            
+            idx = np.arange(len(nthreads))
+            width = 0.25
+            plt.title(wname)
+            for i in range(len(TP)):
+                Y = np.array(TP[i])
+                plt.bar(idx+(i)*width, Y/1000., width=width, label=f"NF:{nfiles[wname][i]}")
+            
+            plt.xticks(idx+width, nthreads)
+            plt.xlabel("# threads")
+            plt.ylabel("Throughput (Kops/s)")
+            plt.legend()
+            plt.show()        
+            plt.clf()
+        
+        
+            plt.title(wname)
+            for i in range(len(BW)):
+                Y = np.array(BW[i])
+                plt.bar(idx+(i)*width, Y/1000., width=width, label=f"NF:{nfiles[wname][i]}")
+            
+            plt.xticks(idx+width, nthreads)
+            plt.xlabel("# threads")
+            plt.ylabel("Bandwidth (GB/s)")
+            plt.legend()
+            plt.show()        
+            plt.clf()
+def main():
+    genworkload()
+    # plot()
 main()

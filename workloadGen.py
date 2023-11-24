@@ -105,7 +105,7 @@ wfunction = {
 
 def genworkload():
     ScriptTxt = ""
-    for wname in workloads[2:3]:
+    for wname in workloads:
         for mt in memtype:
             for nt in nthreads:        
                 for nf in nfiles[wname]:
@@ -118,7 +118,7 @@ def genworkload():
 
                     ScriptTxt = ScriptTxt + f"\tfilebench -f workloads/{expName} > results/{expName}_${{i}}.result" +"\n"
     
-    f = open("exp2.sh", "+w")
+    f = open("exp.sh", "+w")
     f.write(f"for i in {{1..{Ntry}}}\ndo\n {ScriptTxt} done")
     f.close()
     

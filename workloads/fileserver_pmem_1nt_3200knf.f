@@ -50,5 +50,5 @@ echo  "File-server Version 3.0 personality successfully loaded"
 
 
 
-run $runtime
+run 60
 

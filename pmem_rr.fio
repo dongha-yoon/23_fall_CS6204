@@ -14,7 +14,7 @@ clat_percentiles=0
 iodepth=1
 iodepth_batch=1
 thread
-numjobs=1
+numjobs=4
 runtime=300
 
 direct=1
@@ -27,18 +27,6 @@ cpus_allowed_policy=split
 
 directory=/mnt/pmem/fio
 
-[libpmem-seqwrite]
-rw=write
+[libpmem-randread]
+rw=randread
 stonewall
-
-[libpmem-seqread]
-rw=read
-stonewall
-
-#[libpmem-randwrite]
-#rw=randwrite
-#stonewall
-
-#[libpmem-randread]
-#rw=randread
-#stonewall

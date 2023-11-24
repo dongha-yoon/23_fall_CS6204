@@ -1,4 +1,4 @@
-for i in {1..10}
+for i in {1..3}
 do
  	filebench -f workloads/fileserver_pmem_1nt_100knf.f > results/fileserver_pmem_1nt_100knf.f_${i}.result
 	filebench -f workloads/fileserver_pmem_1nt_800knf.f > results/fileserver_pmem_1nt_800knf.f_${i}.result
@@ -73,6 +73,3 @@ do
 	filebench -f workloads/webserver_pmem_100nt_800knf.f > results/webserver_pmem_100nt_800knf.f_${i}.result
 	filebench -f workloads/webserver_pmem_100nt_4mnf.f > results/webserver_pmem_100nt_4mnf.f_${i}.result
  done
-
-
-numactl -C 4-7 fio pmem.fio

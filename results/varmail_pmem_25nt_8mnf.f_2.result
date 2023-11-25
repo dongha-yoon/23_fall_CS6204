@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+4.574: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.574: Removing bigfileset tree (if exists)
+13.418: Pre-allocating directories in bigfileset tree
+13.419: Pre-allocating files in bigfileset tree
+202.311: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+202.311: Population and pre-allocation of filesets completed
+202.311: Starting 1 filereader instances
+203.316: Running...
+263.320: Run took 60 seconds...
+263.321: Per-Operation Breakdown
+closefile4           3793109ops    63214ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.294ms]
+readfile4            3793112ops    63214ops/s 1746.6mb/s    0.020ms/op [0.001ms - 66.236ms]
+openfile4            3793113ops    63214ops/s   0.0mb/s    0.017ms/op [0.001ms - 64.706ms]
+closefile3           3793116ops    63215ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.343ms]
+fsyncfile3           3793116ops    63215ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.287ms]
+appendfilerand3      3793116ops    63215ops/s 493.8mb/s    0.017ms/op [0.001ms - 64.578ms]
+readfile3            3793118ops    63215ops/s 1746.6mb/s    0.020ms/op [0.001ms - 66.274ms]
+openfile3            3793121ops    63215ops/s   0.0mb/s    0.018ms/op [0.001ms - 64.605ms]
+closefile2           3793123ops    63215ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.299ms]
+fsyncfile2           3793123ops    63215ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.264ms]
+appendfilerand2      3793124ops    63215ops/s 493.8mb/s    0.015ms/op [0.004ms - 4.036ms]
+createfile2          3793126ops    63215ops/s   0.0mb/s    0.052ms/op [0.008ms - 66.279ms]
+deletefile1          3793133ops    63215ops/s   0.0mb/s    0.035ms/op [0.007ms - 66.230ms]
+263.321: IO Summary: 49310550 ops 821789.755 ops/s 126429/126429 rd/wr 4480.7mb/s 0.015ms/op
+263.321: Shutting down processes

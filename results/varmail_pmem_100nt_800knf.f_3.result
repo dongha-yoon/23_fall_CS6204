@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+0.419: bigfileset populated: 819200 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 25634.444MB total size
+0.419: Removing bigfileset tree (if exists)
+1.369: Pre-allocating directories in bigfileset tree
+1.369: Pre-allocating files in bigfileset tree
+17.507: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+17.507: Population and pre-allocation of filesets completed
+17.508: Starting 1 filereader instances
+18.517: Running...
+78.524: Run took 60 seconds...
+78.533: Per-Operation Breakdown
+closefile4           3847004ops    64112ops/s   0.0mb/s    0.001ms/op [0.000ms - 3.488ms]
+readfile4            3847005ops    64112ops/s 1151.9mb/s    0.014ms/op [0.001ms - 28.371ms]
+openfile4            3847007ops    64112ops/s   0.0mb/s    0.041ms/op [0.001ms - 42.674ms]
+closefile3           3847007ops    64112ops/s   0.0mb/s    0.001ms/op [0.000ms - 4.491ms]
+fsyncfile3           3847007ops    64112ops/s   0.0mb/s    0.000ms/op [0.000ms - 2.788ms]
+appendfilerand3      3847008ops    64112ops/s 500.8mb/s    0.017ms/op [0.001ms - 29.329ms]
+readfile3            3847010ops    64112ops/s 1150.4mb/s    0.014ms/op [0.001ms - 20.778ms]
+openfile3            3847012ops    64112ops/s   0.0mb/s    0.041ms/op [0.001ms - 65.952ms]
+closefile2           3847012ops    64112ops/s   0.0mb/s    0.001ms/op [0.000ms - 4.474ms]
+fsyncfile2           3847012ops    64112ops/s   0.0mb/s    0.000ms/op [0.000ms - 11.916ms]
+appendfilerand2      3847012ops    64112ops/s 500.8mb/s    0.016ms/op [0.001ms - 28.264ms]
+createfile2          3847040ops    64112ops/s   0.0mb/s    0.360ms/op [0.006ms - 487.201ms]
+deletefile1          3847101ops    64113ops/s   0.0mb/s    0.507ms/op [0.007ms - 480.133ms]
+78.533: IO Summary: 50011237 ops 833457.427 ops/s 128224/128224 rd/wr 3304.0mb/s 0.078ms/op
+78.533: Shutting down processes

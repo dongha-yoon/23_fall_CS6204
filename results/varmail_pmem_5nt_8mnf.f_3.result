@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+4.563: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.563: Removing bigfileset tree (if exists)
+12.623: Pre-allocating directories in bigfileset tree
+12.623: Pre-allocating files in bigfileset tree
+199.807: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+199.807: Population and pre-allocation of filesets completed
+199.807: Starting 1 filereader instances
+200.811: Running...
+260.819: Run took 60 seconds...
+260.819: Per-Operation Breakdown
+closefile4           2375463ops    39587ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.253ms]
+readfile4            2375464ops    39587ops/s 1216.7mb/s    0.014ms/op [0.002ms - 44.956ms]
+openfile4            2375465ops    39587ops/s   0.0mb/s    0.003ms/op [0.001ms - 0.473ms]
+closefile3           2375465ops    39587ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.783ms]
+fsyncfile3           2375465ops    39587ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.202ms]
+appendfilerand3      2375465ops    39587ops/s 309.1mb/s    0.012ms/op [0.002ms - 2.664ms]
+readfile3            2375466ops    39587ops/s 1217.1mb/s    0.014ms/op [0.001ms - 44.955ms]
+openfile3            2375466ops    39587ops/s   0.0mb/s    0.003ms/op [0.001ms - 1.419ms]
+closefile2           2375466ops    39587ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.215ms]
+fsyncfile2           2375466ops    39587ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.169ms]
+appendfilerand2      2375466ops    39587ops/s 309.3mb/s    0.011ms/op [0.004ms - 2.915ms]
+createfile2          2375467ops    39587ops/s   0.0mb/s    0.016ms/op [0.006ms - 17.037ms]
+deletefile1          2375468ops    39587ops/s   0.0mb/s    0.013ms/op [0.006ms - 8.611ms]
+260.819: IO Summary: 30881052 ops 514628.071 ops/s 79174/79174 rd/wr 3052.2mb/s 0.007ms/op
+260.819: Shutting down processes

@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+4.563: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.563: Removing bigfileset tree (if exists)
+13.229: Pre-allocating directories in bigfileset tree
+13.229: Pre-allocating files in bigfileset tree
+202.538: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+202.538: Population and pre-allocation of filesets completed
+202.538: Starting 1 filereader instances
+203.545: Running...
+263.550: Run took 60 seconds...
+263.552: Per-Operation Breakdown
+closefile4           3874950ops    64578ops/s   0.0mb/s    0.001ms/op [0.000ms - 1.200ms]
+readfile4            3874951ops    64578ops/s 1776.8mb/s    0.021ms/op [0.001ms - 67.838ms]
+openfile4            3874960ops    64578ops/s   0.0mb/s    0.038ms/op [0.001ms - 67.634ms]
+closefile3           3874967ops    64579ops/s   0.0mb/s    0.001ms/op [0.000ms - 1.054ms]
+fsyncfile3           3874967ops    64579ops/s   0.0mb/s    0.000ms/op [0.000ms - 1.847ms]
+appendfilerand3      3874967ops    64579ops/s 504.4mb/s    0.018ms/op [0.002ms - 60.653ms]
+readfile3            3874969ops    64579ops/s 1777.7mb/s    0.021ms/op [0.001ms - 67.902ms]
+openfile3            3874976ops    64579ops/s   0.0mb/s    0.037ms/op [0.001ms - 67.671ms]
+closefile2           3874982ops    64579ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.776ms]
+fsyncfile2           3874983ops    64579ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.646ms]
+appendfilerand2      3874984ops    64579ops/s 504.4mb/s    0.017ms/op [0.004ms - 61.453ms]
+createfile2          3874989ops    64579ops/s   0.0mb/s    0.102ms/op [0.006ms - 150.901ms]
+deletefile1          3874994ops    64579ops/s   0.0mb/s    0.074ms/op [0.007ms - 63.957ms]
+263.552: IO Summary: 50374639 ops 839521.908 ops/s 129157/129157 rd/wr 4563.3mb/s 0.025ms/op
+263.552: Shutting down processes

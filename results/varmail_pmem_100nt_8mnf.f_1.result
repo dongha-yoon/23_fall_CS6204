@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.003: Varmail Version 3.0 personality successfully loaded
+0.003: Populating and pre-allocating filesets
+4.588: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.588: Removing bigfileset tree (if exists)
+13.340: Pre-allocating directories in bigfileset tree
+13.341: Pre-allocating files in bigfileset tree
+200.337: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+200.338: Population and pre-allocation of filesets completed
+200.338: Starting 1 filereader instances
+201.348: Running...
+261.354: Run took 60 seconds...
+261.363: Per-Operation Breakdown
+closefile4           3630880ops    60511ops/s   0.0mb/s    0.001ms/op [0.000ms - 166.773ms]
+readfile4            3630881ops    60511ops/s 1684.1mb/s    0.021ms/op [0.001ms - 64.348ms]
+openfile4            3630895ops    60511ops/s   0.0mb/s    0.087ms/op [0.001ms - 167.120ms]
+closefile3           3630906ops    60511ops/s   0.0mb/s    0.001ms/op [0.000ms - 1.295ms]
+fsyncfile3           3630911ops    60511ops/s   0.0mb/s    0.000ms/op [0.000ms - 3.549ms]
+appendfilerand3      3630912ops    60511ops/s 472.6mb/s    0.017ms/op [0.001ms - 80.253ms]
+readfile3            3630912ops    60511ops/s 1685.9mb/s    0.021ms/op [0.001ms - 64.330ms]
+openfile3            3630925ops    60511ops/s   0.0mb/s    0.086ms/op [0.001ms - 64.952ms]
+closefile2           3630942ops    60512ops/s   0.0mb/s    0.001ms/op [0.000ms - 2.224ms]
+fsyncfile2           3630942ops    60512ops/s   0.0mb/s    0.000ms/op [0.000ms - 1.053ms]
+appendfilerand2      3630942ops    60512ops/s 472.7mb/s    0.016ms/op [0.001ms - 20.543ms]
+createfile2          3630948ops    60512ops/s   0.0mb/s    0.219ms/op [0.006ms - 117.411ms]
+deletefile1          3630963ops    60512ops/s   0.0mb/s    0.156ms/op [0.007ms - 117.446ms]
+261.363: IO Summary: 47201959 ops 786647.608 ops/s 121022/121023 rd/wr 4315.2mb/s 0.048ms/op
+261.363: Shutting down processes

@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+4.561: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.562: Removing bigfileset tree (if exists)
+13.208: Pre-allocating directories in bigfileset tree
+13.209: Pre-allocating files in bigfileset tree
+200.425: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+200.425: Population and pre-allocation of filesets completed
+200.425: Starting 1 filereader instances
+201.434: Running...
+261.440: Run took 60 seconds...
+261.450: Per-Operation Breakdown
+closefile4           3561056ops    59347ops/s   0.0mb/s    0.001ms/op [0.000ms - 1.102ms]
+readfile4            3561057ops    59347ops/s 1659.7mb/s    0.020ms/op [0.001ms - 62.611ms]
+openfile4            3561069ops    59347ops/s   0.0mb/s    0.094ms/op [0.001ms - 117.368ms]
+closefile3           3561085ops    59348ops/s   0.0mb/s    0.001ms/op [0.000ms - 126.017ms]
+fsyncfile3           3561085ops    59348ops/s   0.0mb/s    0.000ms/op [0.000ms - 6.781ms]
+appendfilerand3      3561087ops    59348ops/s 463.4mb/s    0.017ms/op [0.001ms - 56.193ms]
+readfile3            3561088ops    59348ops/s 1659.8mb/s    0.021ms/op [0.001ms - 62.679ms]
+openfile3            3561095ops    59348ops/s   0.0mb/s    0.093ms/op [0.001ms - 116.216ms]
+closefile2           3561104ops    59348ops/s   0.0mb/s    0.001ms/op [0.000ms - 1.709ms]
+fsyncfile2           3561104ops    59348ops/s   0.0mb/s    0.000ms/op [0.000ms - 2.325ms]
+appendfilerand2      3561107ops    59348ops/s 463.7mb/s    0.016ms/op [0.004ms - 21.633ms]
+createfile2          3561123ops    59348ops/s   0.0mb/s    0.211ms/op [0.006ms - 116.639ms]
+deletefile1          3561133ops    59348ops/s   0.0mb/s    0.149ms/op [0.007ms - 112.611ms]
+261.450: IO Summary: 46294193 ops 771519.002 ops/s 118695/118695 rd/wr 4246.6mb/s 0.048ms/op
+261.450: Shutting down processes

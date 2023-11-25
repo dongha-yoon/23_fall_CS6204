@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.003: Varmail Version 3.0 personality successfully loaded
+0.003: Populating and pre-allocating filesets
+4.584: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.584: Removing bigfileset tree (if exists)
+13.360: Pre-allocating directories in bigfileset tree
+13.360: Pre-allocating files in bigfileset tree
+200.415: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+200.415: Population and pre-allocation of filesets completed
+200.416: Starting 1 filereader instances
+201.420: Running...
+261.485: Run took 60 seconds...
+261.486: Per-Operation Breakdown
+closefile4           3806864ops    63380ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.227ms]
+readfile4            3806865ops    63380ops/s 1749.5mb/s    0.020ms/op [0.001ms - 67.140ms]
+openfile4            3806867ops    63380ops/s   0.0mb/s    0.017ms/op [0.001ms - 67.101ms]
+closefile3           3806870ops    63380ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.604ms]
+fsyncfile3           3806870ops    63380ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.309ms]
+appendfilerand3      3806871ops    63380ops/s 495.0mb/s    0.017ms/op [0.001ms - 24.681ms]
+readfile3            3806874ops    63380ops/s 1751.0mb/s    0.020ms/op [0.001ms - 67.093ms]
+openfile3            3806874ops    63380ops/s   0.0mb/s    0.018ms/op [0.001ms - 67.091ms]
+closefile2           3806877ops    63380ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.262ms]
+fsyncfile2           3806877ops    63380ops/s   0.0mb/s    0.000ms/op [0.000ms - 0.253ms]
+appendfilerand2      3806879ops    63380ops/s 495.2mb/s    0.016ms/op [0.004ms - 64.027ms]
+createfile2          3806884ops    63381ops/s   0.0mb/s    0.052ms/op [0.006ms - 65.014ms]
+deletefile1          3806888ops    63381ops/s   0.0mb/s    0.035ms/op [0.007ms - 65.497ms]
+261.486: IO Summary: 49489360 ops 823944.534 ops/s 126761/126761 rd/wr 4490.7mb/s 0.015ms/op
+261.486: Shutting down processes

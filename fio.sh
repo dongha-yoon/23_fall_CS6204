@@ -16,8 +16,8 @@ do_lmbench() {
 do_fio() {
 	fioname=$1
 	ff=$2
-	echo "numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output"
-	numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output
+	echo "numactl -C 12-15 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output"
+	numactl -C 12-15 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output
 	
 	# echo "$fioname done" >> lmbench_res/fio_${fioname}_rd.res
 	# echo "$fioname done" >> lmbench_res/fio_${fioname}_wr.res
@@ -27,7 +27,7 @@ do_fio() {
 do_graph() {
 	fioname=$1
 	ff=$2
-	mpirun -genv I_MPI_PIN_PROCESSOR_LIST 8-15 -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
+	mpirun -genv -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
 	
 }
 
@@ -40,8 +40,8 @@ export PMEM_IS_PMEM_FORCE=1
 
 for wl in "${fioworkloads[@]}"
 do
-	do_fio $wl _
-	do_graph $wl _
+	# do_fio $wl _
+	# do_graph $wl _
 
 	do_fio $wl __ &
 	sleep 10s

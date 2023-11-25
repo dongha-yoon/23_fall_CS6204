@@ -42,12 +42,12 @@ rm graph500_res/*
 
 for wl in "${fioworkloads[@]}"
 do
-	# do_fio $wl _
-	# do_graph $wl _
-
+	do_fio $wl _
+	do_graph $wl _
 	do_fio $wl __ &
-	sleep 10s
+	sleep 30s
 	do_graph $wl __
+	sleep 600s
 	
 	# do_lmbench $wl
 	

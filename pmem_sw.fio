@@ -15,7 +15,7 @@ iodepth=1
 iodepth_batch=1
 thread
 numjobs=4
-runtime=600
+runtime=1200
 
 direct=1
 

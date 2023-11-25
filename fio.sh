@@ -27,7 +27,7 @@ do_fio() {
 do_graph() {
 	fioname=$1
 	ff=$2
-	mpirun -genv I_MPI_PIN_PROCESSOR_LIST 8-15 -n 8 ../graph500/src/graph500_reference_bfs 10 >> graph_${fioname}${ff}.result 2>&1
+	mpirun -genv I_MPI_PIN_PROCESSOR_LIST 8-15 -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
 	
 }
 
@@ -37,18 +37,17 @@ export PMEM_IS_PMEM_FORCE=1
 # rm fio_res/*
 
 
-do_graph "tt" __
 
-# for wl in "${fioworkloads[@]}"
-# do
-# 	do_fio $wl _
-# 	do_graph $wl _
+for wl in "${fioworkloads[@]}"
+do
+	do_fio $wl _
+	do_graph $wl _
 
-# 	do_fio $wl __ &
-# 	sleep 10s
-# 	do_graph $wl __
+	do_fio $wl __ &
+	sleep 10s
+	do_graph $wl __
 	
-# 	# do_lmbench $wl
+	# do_lmbench $wl
 	
-# done
+done
 

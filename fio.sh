@@ -27,14 +27,16 @@ do_fio() {
 do_graph() {
 	fioname=$1
 	ff=$2
-	mpirun -genv -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
+	echo "mpirun -genv -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1"
+	mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
 	
 }
 
 export PMEM_IS_PMEM_FORCE=1
 
 # rm lmbench_res/*
-# rm fio_res/*
+rm fio_res/*
+rm graph500_res/*
 
 
 

@@ -185,6 +185,8 @@ def plot():
             plt.show()        
             plt.clf()
 def main():
-    genworkload()
-    # plot()
+    # genworkload()
+    plot()
+    
+    
 main()

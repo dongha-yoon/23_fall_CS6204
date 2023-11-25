@@ -37,7 +37,7 @@ export PMEM_IS_PMEM_FORCE=1
 # rm fio_res/*
 
 
-do_graph tt __
+do_graph "tt" __
 
 # for wl in "${fioworkloads[@]}"
 # do

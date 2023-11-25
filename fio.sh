@@ -19,9 +19,9 @@ do_fio() {
 	echo "numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output"
 	numactl -C 4-7 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output
 	
-	echo "$fioname done" >> lmbench_res/fio_${fioname}_rd.res
-	echo "$fioname done" >> lmbench_res/fio_${fioname}_wr.res
-	echo "$fioname done" >> lmbench_res/fio_${fioname}_rdwr.res
+	# echo "$fioname done" >> lmbench_res/fio_${fioname}_rd.res
+	# echo "$fioname done" >> lmbench_res/fio_${fioname}_wr.res
+	# echo "$fioname done" >> lmbench_res/fio_${fioname}_rdwr.res
 }
 
 do_graph() {
@@ -33,8 +33,8 @@ do_graph() {
 
 export PMEM_IS_PMEM_FORCE=1
 
-rm lmbench_res/*
-rm fio_res/*
+# rm lmbench_res/*
+# rm fio_res/*
 
 
 do_graph tt __

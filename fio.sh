@@ -27,7 +27,7 @@ do_fio() {
 do_graph() {
 	$fioname=$1
 	ff=$2
-	mpirun -genv I_MPI_PIN_PROCESSOR_LIST 8-15 -n 8 ./graph500_reference_bfs 10 >> graph_${fioname}${ff}.result 2>&1
+	mpirun -genv I_MPI_PIN_PROCESSOR_LIST 8-15 -n 8 ../graph500/src/graph500_reference_bfs 10 >> graph_${fioname}${ff}.result 2>&1
 	
 }
 

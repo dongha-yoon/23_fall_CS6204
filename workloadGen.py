@@ -1,4 +1,6 @@
 
+
+
 def readBody(wname):
     f = open("workloadbody/"+wname)
     txt = ""
@@ -7,12 +9,13 @@ def readBody(wname):
 
     return txt;
 
+DIR_NAME = "/mnt/pmem"
 
 #fileserver
 def Setfileserver(type, nt, nf):
     TXT = ""
     
-    dirname = "/mnt/pmem"
+    dirname = DIR_NAME
 
     TXT = TXT + f"set $dir={dirname}" + "\n"
     TXT = TXT + f"set $nfiles={nf}" + "\n"
@@ -30,7 +33,7 @@ def Setfileserver(type, nt, nf):
 def Setvarmail(type, nt, nf):
     TXT = ""
     
-    dirname = "/mnt/pmem"
+    dirname = DIR_NAME
 
     TXT = TXT + f"set $dir={dirname}" + "\n"
     TXT = TXT + f"set $nfiles={nf}" + "\n"
@@ -46,7 +49,7 @@ def Setvarmail(type, nt, nf):
 def Setwebproxy(type, nt, nf):
     TXT = ""
     
-    dirname = "/mnt/pmem"
+    dirname = DIR_NAME
 
     TXT = TXT + f"set $dir={dirname}" + "\n"
     TXT = TXT + f"set $nfiles={nf}" + "\n"
@@ -64,7 +67,7 @@ def Setwebproxy(type, nt, nf):
 def Setwebserver(type, nt, nf):
     TXT = ""
     
-    dirname = "/mnt/pmem"
+    dirname = DIR_NAME
 
     TXT = TXT + f"set $dir={dirname}" + "\n"
     TXT = TXT + f"set $nfiles={nf}" + "\n"
@@ -116,9 +119,11 @@ def genworkload():
                     f.write(WorkloadTxt)
                     f.close()
 
-                    ScriptTxt = ScriptTxt + f"\tfilebench -f workloads/{expName} > results/{expName}_${{i}}.result" +"\n"
+                    ScriptTxt = ScriptTxt + f"\tfilebench -f workloads/{expName} > results_ext4/{expName}_${{i}}.result" +"\n"
     
-    f = open("exp.sh", "+w")
+    # f = open("exp.sh", "+w")
+    f = open("exp_ext4.sh", "+w")
+    
     f.write(f"for i in {{1..{Ntry}}}\ndo\n {ScriptTxt} done")
     f.close()
     
@@ -126,6 +131,14 @@ def genworkload():
 import re
 import matplotlib.pyplot as plt
 import numpy as np
+
+
+NOVA_t = {
+    NAME_FILESERVER: 140,
+    NAME_VALMAIL   : 300,
+    NAME_WEBPROXY  : 275,
+    NAME_WEBSERVER : 210
+}
 
 def plot():
     
@@ -151,8 +164,8 @@ def plot():
                         throughput += float(res[1])
                         bandwidth += float(res[2])
                         
-                    t.append(throughput)
-                    b.append(bandwidth)
+                    t.append(throughput/3)
+                    b.append(bandwidth/3)
                 
                 TP.append(t)
                 BW.append(b)
@@ -165,11 +178,13 @@ def plot():
                 Y = np.array(TP[i])
                 plt.bar(idx+(i)*width, Y/1000., width=width, label=f"NF:{nfiles[wname][i]}")
             
+            plt.axhline(NOVA_t[wname], label="NOVA PCM-large", color='r', linestyle='--')
             plt.xticks(idx+width, nthreads)
             plt.xlabel("# threads")
             plt.ylabel("Throughput (Kops/s)")
             plt.legend()
-            plt.show()        
+            # plt.show()
+            # plt.savefig(f"plots/{wname}_t.png")        
             plt.clf()
         
         
@@ -183,10 +198,11 @@ def plot():
             plt.ylabel("Bandwidth (GB/s)")
             plt.legend()
             plt.show()        
+            # plt.savefig(f"plots/{wname}_b.png")
             plt.clf()
 def main():
-    # genworkload()
-    plot()
+    genworkload()
+    # plot()
     
     
 main()

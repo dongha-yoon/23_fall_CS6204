@@ -1,0 +1,22 @@
+libpmem-randread: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libpmem, iodepth=1
+...
+fio-3.36-19-gbdf99
+Starting 4 threads
+libpmem-randread: Prepopulating IO file (/mnt/pmem/fio/libpmem-randread.0.0)
+libpmem-randread: Prepopulating IO file (/mnt/pmem/fio/libpmem-randread.3.0)
+libpmem-randread: Prepopulating IO file (/mnt/pmem/fio/libpmem-randread.2.0)
+libpmem-randread: Prepopulating IO file (/mnt/pmem/fio/libpmem-randread.1.0)
+
+libpmem-randread: (groupid=0, jobs=4): err= 0: pid=31229: Sun Nov 26 02:25:05 2023
+  read: IOPS=2184k, BW=8532MiB/s (8947MB/s)(9999GiB/1200000msec)
+   bw (  MiB/s): min= 2532, max= 8723, per=100.00%, avg=8533.39, stdev=107.89, samples=9596
+   iops        : min=648288, max=2233222, avg=2184547.45, stdev=27619.39, samples=9596
+  cpu          : usr=99.34%, sys=0.62%, ctx=129150, majf=0, minf=10485764
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=2621073556,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=8532MiB/s (8947MB/s), 8532MiB/s-8532MiB/s (8947MB/s-8947MB/s), io=9999GiB (10.7TB), run=1200000-1200000msec

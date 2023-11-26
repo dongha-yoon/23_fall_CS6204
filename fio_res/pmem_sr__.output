@@ -1,0 +1,22 @@
+libpmem-seqread: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libpmem, iodepth=1
+...
+fio-3.36-19-gbdf99
+Starting 4 threads
+libpmem-seqread: Prepopulating IO file (/mnt/pmem/fio/libpmem-seqread.0.0)
+libpmem-seqread: Prepopulating IO file (/mnt/pmem/fio/libpmem-seqread.3.0)
+libpmem-seqread: Prepopulating IO file (/mnt/pmem/fio/libpmem-seqread.2.0)
+libpmem-seqread: Prepopulating IO file (/mnt/pmem/fio/libpmem-seqread.1.0)
+
+libpmem-seqread: (groupid=0, jobs=4): err= 0: pid=31370: Sun Nov 26 04:05:33 2023
+  read: IOPS=2183k, BW=8525MiB/s (8940MB/s)(9991GiB/1200002msec)
+   bw (  MiB/s): min= 3570, max= 8806, per=100.00%, avg=8526.71, stdev=103.29, samples=9596
+   iops        : min=913982, max=2254438, avg=2182838.25, stdev=26442.13, samples=9596
+  cpu          : usr=99.60%, sys=0.35%, ctx=134199, majf=0, minf=10485764
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=2619015983,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=8525MiB/s (8940MB/s), 8525MiB/s-8525MiB/s (8940MB/s-8940MB/s), io=9991GiB (10.7TB), run=1200002-1200002msec

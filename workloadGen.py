@@ -110,7 +110,7 @@ def genworkload():
     ScriptTxt = ""
     for wname in workloads:
         for mt in memtype:
-            for nt in nthreads:        
+            for nt in nthreads[4:5]:        
                 for nf in nfiles[wname]:
                     expName = f"{wname}_{mt}_{nt}nt_{nf}nf.f"
                     WorkloadTxt = wfunction[wname](mt, nt, nf) + readBody(wname)
@@ -200,9 +200,12 @@ def plot():
             plt.show()        
             # plt.savefig(f"plots/{wname}_b.png")
             plt.clf()
+
+
+
 def main():
     genworkload()
     # plot()
-    
+
     
 main()

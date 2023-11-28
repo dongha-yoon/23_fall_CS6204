@@ -18,10 +18,7 @@ do_fio() {
 	ff=$2
 	echo "numactl -C 12-15 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output"
 	numactl -C 12-15 fio pmem_${fioname}.fio -output=fio_res/pmem_${fioname}${ff}.output
-	
-	# echo "$fioname done" >> lmbench_res/fio_${fioname}_rd.res
-	# echo "$fioname done" >> lmbench_res/fio_${fioname}_wr.res
-	# echo "$fioname done" >> lmbench_res/fio_${fioname}_rdwr.res
+
 }
 
 do_graph() {

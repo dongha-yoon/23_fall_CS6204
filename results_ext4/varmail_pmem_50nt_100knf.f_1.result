@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.003: Varmail Version 3.0 personality successfully loaded
+0.003: Populating and pre-allocating filesets
+0.052: bigfileset populated: 102400 files, avg. dir. width = 1000000, avg. dir. depth = 0.8, 0 leafdirs, 3202.118MB total size
+0.052: Removing bigfileset tree (if exists)
+35.182: Pre-allocating directories in bigfileset tree
+35.182: Pre-allocating files in bigfileset tree
+38.176: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+38.176: Population and pre-allocation of filesets completed
+38.176: Starting 1 filereader instances
+39.182: Running...
+99.187: Run took 60 seconds...
+99.191: Per-Operation Breakdown
+closefile4           1057040ops    17616ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.136ms]
+readfile4            1057040ops    17616ops/s 294.2mb/s    0.025ms/op [0.001ms - 133.694ms]
+openfile4            1057040ops    17616ops/s   0.0mb/s    0.016ms/op [0.002ms - 9.778ms]
+closefile3           1057040ops    17616ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.174ms]
+fsyncfile3           1057064ops    17617ops/s   0.0mb/s    0.970ms/op [0.001ms - 13.967ms]
+appendfilerand3      1057066ops    17617ops/s 137.5mb/s    0.104ms/op [0.002ms - 133.770ms]
+readfile3            1057066ops    17617ops/s 292.2mb/s    0.023ms/op [0.001ms - 133.132ms]
+openfile3            1057066ops    17617ops/s   0.0mb/s    0.015ms/op [0.002ms - 4.913ms]
+closefile2           1057066ops    17617ops/s   0.0mb/s    0.001ms/op [0.001ms - 1.231ms]
+fsyncfile2           1057083ops    17617ops/s   0.0mb/s    0.860ms/op [0.048ms - 36.118ms]
+appendfilerand2      1057090ops    17617ops/s 137.6mb/s    0.042ms/op [0.001ms - 133.305ms]
+createfile2          1057090ops    17617ops/s   0.0mb/s    0.155ms/op [0.010ms - 134.536ms]
+deletefile1          1057090ops    17617ops/s   0.0mb/s    0.466ms/op [0.015ms - 134.437ms]
+99.191: IO Summary: 13741841 ops 229016.175 ops/s 35233/35234 rd/wr 861.4mb/s 0.206ms/op
+99.191: Shutting down processes

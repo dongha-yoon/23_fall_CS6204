@@ -16,8 +16,8 @@ for wl in fworkloads:
     
     res.append(bw2/bw1)
 
-plt.bar(np.arange(len(fworkloads))-0.1, np.ones(4), width=0.2, label="w/o fio")        
-plt.bar(np.arange(len(fworkloads))+0.1, res, width=0.2, label="w/  fio")
+plt.bar(np.arange(len(fworkloads))-0.1, np.ones(4), width=0.2, label="w/o graph500")        
+plt.bar(np.arange(len(fworkloads))+0.1, res, width=0.2, label="w/  graph500")
 plt.xticks(range(len(fworkloads)), fworkloads)
 plt.ylim(0.9,1.1)
 plt.title("FIO: Normalized bandwidth")

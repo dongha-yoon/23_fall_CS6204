@@ -110,7 +110,7 @@ def genworkload():
     ScriptTxt = ""
     for wname in workloads:
         for mt in memtype:
-            for nt in nthreads[4:5]:        
+            for nt in nthreads:        
                 for nf in nfiles[wname]:
                     expName = f"{wname}_{mt}_{nt}nt_{nf}nf.f"
                     WorkloadTxt = wfunction[wname](mt, nt, nf) + readBody(wname)
@@ -132,6 +132,13 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+EXT4_t = {
+    NAME_FILESERVER: 100,
+    NAME_VALMAIL   : 125,
+    NAME_WEBPROXY  : 180,
+    NAME_WEBSERVER : 220
+}
 
 NOVA_t = {
     NAME_FILESERVER: 140,
@@ -179,6 +186,7 @@ def plot():
                 plt.bar(idx+(i)*width, Y/1000., width=width, label=f"NF:{nfiles[wname][i]}")
             
             plt.axhline(NOVA_t[wname], label="NOVA PCM-large", color='r', linestyle='--')
+            
             plt.xticks(idx+width, nthreads)
             plt.xlabel("# threads")
             plt.ylabel("Throughput (Kops/s)")
@@ -202,10 +210,84 @@ def plot():
             plt.clf()
 
 
+def comp_ext4_nova():
+    
+    NOVA_tt = {
+        NAME_FILESERVER: 140,
+        NAME_VALMAIL   : 300,
+        NAME_WEBPROXY  : 275,
+        NAME_WEBSERVER : 210
+    }
+    
+    filesystem = ["_ext4" ,""] 
+    fsname = ["EXT4", "NOVA"]
+    for wname in workloads:
+        for mt in memtype:
+            TP = []
+            BW = []
+            for fs in filesystem:
+                t = []
+                b = []
+                for nf in nfiles[wname]:
+                    throughput = 0
+                    bandwidth = 0
+                    
+                    for tr in range(1,Ntry+1):
+                        fname = f"results{fs}/{wname}_{mt}_50nt_{nf}nf.f_{tr}.result"
+                        f = open(fname, "r")
+                        res = f.readlines()[-2]
+                        res = re.findall("\d+\.\d+", res)
+                        throughput += float(res[1])
+                        bandwidth += float(res[2])
+
+                    # print(f"{wname}_{fs}_{nf}: {throughput/3}")
+
+                    t.append(throughput/3)
+                    b.append(bandwidth/3)
+                
+                TP.append(t)
+                BW.append(b)
+            # print(TP)
+            # print(BW)
+
+            idx = np.arange(len(nfiles[wname]))
+            width = 0.25
+                
+            plt.title(wname)
+            for i in range(len(TP)):
+                Y = np.array(TP[i])
+                plt.bar(idx+(i+0.5)*width, Y/1000., width=width, label=f"{fsname[i]}")
+            
+            
+            plt.axhline(NOVA_t[wname], label="NOVA PCM-large", color='r', linestyle='--')
+            plt.axhline(EXT4_t[wname], label="EXT4 PCM-large", color='b', linestyle='--')
+            
+            plt.xticks(idx+width, nfiles[wname])
+            plt.xlabel("# files")
+            plt.ylabel("Throughput (Kops/s)")
+            # plt.legend()
+            plt.show()
+            # plt.savefig(f"plots/{wname}_t.png")        
+            plt.clf()
+        
+        
+            plt.title(wname)
+            for i in range(len(BW)):
+                Y = np.array(BW[i])
+                plt.bar(idx+(i+0.5)*width, Y/1000., width=width, label=f"{fsname[i]}")
+            
+            plt.xticks(idx+width, nfiles[wname])
+            plt.xlabel("# files")
+            plt.ylabel("Bandwidth (GB/s)")
+            # plt.legend()
+            # plt.show()        
+            # plt.savefig(f"plots/{wname}_b.png")
+            plt.clf()
 
 def main():
     genworkload()
     # plot()
+    # comp_ext4_nova()
 
     
 main()

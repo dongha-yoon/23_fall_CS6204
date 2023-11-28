@@ -164,7 +164,7 @@ def plot():
                     throughput = 0
                     bandwidth = 0
                     for tr in range(1,Ntry+1):
-                        fname = f"results/{wname}_{mt}_{nt}nt_{nf}nf.f_{tr}.result"
+                        fname = f"results_ext4/{wname}_{mt}_{nt}nt_{nf}nf.f_{tr}.result"
                         f = open(fname, "r")
                         res = f.readlines()[-2]
                         res = re.findall("\d+\.\d+", res)

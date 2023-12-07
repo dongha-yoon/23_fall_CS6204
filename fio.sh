@@ -51,7 +51,7 @@ export PMEM_IS_PMEM_FORCE=1
 # rm graph500_res/*
 
 fbworkloads=("fileserver" "webserver")
-for wl in "${fioworkloads[@]}"	
+for wl in "${fbworkloads[@]}"	
 do
 	# do_graph $wl _
 	do_filebench $wl &

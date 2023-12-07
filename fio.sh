@@ -67,7 +67,7 @@ wl="fileserver"
 do_fileserver $wl _
 do_fileserver $wl __ &
 do_graph $wl __
-# sleep 300
+sleep 300
 
 wl="webserver"
 do_webserver $wl _

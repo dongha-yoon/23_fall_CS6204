@@ -36,7 +36,7 @@ do_graph() {
 }	
 
 do_filebench(){
-	for i in {1..20}
+	for i in {1..3}
 	do
 		echo "numactl -C 12-15 filebench -f workloads/webserver_pmem_25nt_4mnf.f > graph500_res/filebench_${i}.result"
 		numactl -C 12-15 filebench -f workloads/webserver_pmem_25nt_4mnf.f > graph500_res/webserver_${i}.result
@@ -49,8 +49,8 @@ export PMEM_IS_PMEM_FORCE=1
 # rm fio_res/*
 # rm graph500_res/*
 
-wl=fbench
-# do_graph $wl _
+wl=webserver
+do_graph $wl _
 do_filebench &
 do_graph $wl __
 

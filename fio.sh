@@ -32,7 +32,7 @@ do_graph() {
 	fioname=$1
 	ff=$2
 	echo "mpirun -genv -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1"
-	mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
+	# mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
 	STATE=$DONE
 }	
 
@@ -40,7 +40,7 @@ do_filebench(){
 	while [$STATE -eq $YET]
 	do
 		echo "numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result"
-		numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result
+		# numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result
 	done
 }
 

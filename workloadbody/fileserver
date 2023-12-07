@@ -15,7 +15,7 @@ define process name=filereader,instances=1
     flowop closefile name=closefile3,fd=1
     flowop deletefile name=deletefile1,filesetname=bigfileset
     flowop statfile name=statfile1,filesetname=bigfileset
-  }
+  }  
 }
 
 echo  "File-server Version 3.0 personality successfully loaded"

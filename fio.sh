@@ -13,6 +13,13 @@ do_lmbench() {
 	echo "lmbench $1 done"
 }
 
+
+
+
+YET=0
+DONE=1
+STATE=$YET
+
 do_fio() {
 	fioname=$1
 	ff=$2
@@ -26,27 +33,39 @@ do_graph() {
 	ff=$2
 	echo "mpirun -genv -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1"
 	mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
-	
+	STATE=$DONE
+}	
+
+do_filebench(){
+	while [$STATE -eq $YET]
+	do
+		numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result
+	done
 }
 
 export PMEM_IS_PMEM_FORCE=1
 
 # rm lmbench_res/*
-rm fio_res/*
-rm graph500_res/*
+# rm fio_res/*
+# rm graph500_res/*
 
+wl=fbench
+do_graph $wl _
+do_filebench &
+sleep 10s
+do_graph $wl __
 
-
-for wl in "${fioworkloads[@]}"
-do
-	do_fio $wl _
-	do_graph $wl _
-	do_fio $wl __ &
-	sleep 30s
-	do_graph $wl __
-	sleep 600s
+# for wl in "${fioworkloads[@]}"
+# do
+# 	do_fio $wl _
+# 	do_graph $wl _
+# 	do_fio $wl __ &
+# 	sleep 30s
+# 	do_graph $wl __
+# 	sleep 600s
 	
-	# do_lmbench $wl
+# 	# do_lmbench $wl
 	
-done
+# done
+
 

@@ -38,8 +38,8 @@ do_graph() {
 do_filebench(){
 	for i in {1..20}
 	do
-		echo "numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench_${i}.result"
-		numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench_${i}.result
+		echo "numactl -C 12-15 filebench -f workloads/webserver_pmem_25nt_4mnf.f > graph500_res/filebench_${i}.result"
+		numactl -C 12-15 filebench -f workloads/webserver_pmem_25nt_4mnf.f > graph500_res/webserver_${i}.result
 	done
 }
 

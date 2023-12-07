@@ -39,6 +39,7 @@ do_graph() {
 do_filebench(){
 	while [$STATE -eq $YET]
 	do
+		echo "numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result"
 		numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result
 	done
 }

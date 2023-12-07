@@ -35,7 +35,16 @@ do_graph() {
 	mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
 }	
 
-do_filebench(){
+do_fileserver(){
+	wl=$1
+	for i in {1..3}
+	do
+		echo "numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}.result"
+		numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}.result
+	done
+}
+
+do_webserver(){
 	wl=$1
 	for i in {1..3}
 	do
@@ -54,7 +63,12 @@ fbworkloads=("fileserver" "webserver")
 for wl in "${fbworkloads[@]}"	
 do
 	# do_graph $wl _
-	do_filebench $wl &
+	if [ wl -eq "fileserver"]
+		do_fileserver $wl &
+
+	if [ wl -eq "webserver"]
+		do_webserver $wl &
+
 	do_graph $wl __
 	sleep 300s
 done

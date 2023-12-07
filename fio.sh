@@ -32,15 +32,14 @@ do_graph() {
 	fioname=$1
 	ff=$2
 	echo "mpirun -genv -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1"
-	# mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
-	STATE=$DONE
+	mpirun -n 8 ../graph500/src/graph500_reference_bfs 24 >> graph500_res/graph_${fioname}${ff}.result 2>&1
 }	
 
 do_filebench(){
-	while [ $STATE -eq $YET ]
+	for i in {1..20}
 	do
-		echo "numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result"
-		# numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench.result
+		echo "numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench_${i}.result"
+		numactl -C 12-15 filebench -f workloads/fileserver_pmem_25nt_3200knf.f > graph500_res/filebench_${i}.result
 	done
 }
 
@@ -53,7 +52,6 @@ export PMEM_IS_PMEM_FORCE=1
 wl=fbench
 # do_graph $wl _
 do_filebench &
-sleep 10s
 do_graph $wl __
 
 # for wl in "${fioworkloads[@]}"

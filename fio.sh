@@ -59,23 +59,17 @@ export PMEM_IS_PMEM_FORCE=1
 # rm fio_res/*
 # rm graph500_res/*
 
-fbworkloads=("fileserver" "webserver")
-for wl in "${fbworkloads[@]}"	
-do
-	# do_graph $wl _
-	if [ wl -eq "fileserver" ]
-	do
-		do_fileserver $wl &
-	done
+fbworkloads=( )
 
-	if [ wl -eq "webserver" ]
-	do
-		do_webserver $wl &
-	done
+wl="fileserver"
+do_fileserver $wl &
+do_graph $wl __
+sleep 300
 
-	do_graph $wl __
-	sleep 300s
-done
+wl="webserver"
+do_webserver $wl &
+do_graph $wl __
+
 # for wl in "${fioworkloads[@]}"
 # do
 # 	do_fio $wl _

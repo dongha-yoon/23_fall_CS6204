@@ -37,6 +37,7 @@ do_graph() {
 
 do_fileserver(){
 	wl=$1
+	ff=$2
 	for i in {1..3}
 	do
 		echo "numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}${ff}.result"

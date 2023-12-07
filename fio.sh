@@ -39,8 +39,8 @@ do_fileserver(){
 	wl=$1
 	for i in {1..3}
 	do
-		echo "numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}.result"
-		numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}.result
+		echo "numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}${ff}.result"
+		numactl -C 12-15 filebench -f workloads/${wl}_pmem_5nt_3200knf.f > final_res/${wl}_${i}${ff}.result
 	done
 }
 
@@ -63,13 +63,14 @@ export PMEM_IS_PMEM_FORCE=1
 fbworkloads=( )
 
 wl="fileserver"
-do_fileserver $wl _x
-# do_graph $wl __
+do_fileserver $wl _
+do_fileserver $wl __ &
+do_graph $wl __
 # sleep 300
 
 wl="webserver"
-do_webserver $wl _x
-do_webserver $wl __x &
+do_webserver $wl _
+do_webserver $wl __ &
 do_graph $wl __
 
 # for wl in "${fioworkloads[@]}"

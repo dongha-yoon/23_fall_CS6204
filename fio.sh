@@ -63,13 +63,13 @@ export PMEM_IS_PMEM_FORCE=1
 fbworkloads=( )
 
 wl="fileserver"
-do_fileserver $wl _
+do_fileserver $wl _x
 # do_graph $wl __
 # sleep 300
 
 wl="webserver"
-do_webserver $wl _
-do_webserver $wl _ &
+do_webserver $wl _x
+do_webserver $wl __x &
 do_graph $wl __
 
 # for wl in "${fioworkloads[@]}"

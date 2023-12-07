@@ -64,10 +64,14 @@ for wl in "${fbworkloads[@]}"
 do
 	# do_graph $wl _
 	if [ wl -eq "fileserver"]
+	do
 		do_fileserver $wl &
+	done
 
 	if [ wl -eq "webserver"]
+	do
 		do_webserver $wl &
+	done
 
 	do_graph $wl __
 	sleep 300s

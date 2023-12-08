@@ -6,7 +6,7 @@ Filebench Version 1.5-alpha3
 0.001: Removing logfiles tree (if exists)
 0.004: Pre-allocating directories in logfiles tree
 0.004: Pre-allocating files in logfiles tree
-2.400: bigfileset populated: 4194304 files, avg. dir. width = 20, avg. dir. depth = 5.1, 0 leafdirs, 262318.862MB total size
-2.400: Removing bigfileset tree (if exists)
-43.876: Pre-allocating directories in bigfileset tree
-48.112: Pre-allocating files in bigfileset tree
+2.344: bigfileset populated: 4194304 files, avg. dir. width = 20, avg. dir. depth = 5.1, 0 leafdirs, 262318.862MB total size
+2.344: Removing bigfileset tree (if exists)
+63.087: Pre-allocating directories in bigfileset tree
+67.625: Pre-allocating files in bigfileset tree

@@ -354,3 +354,5 @@ bfs  thirdquartile_validate:    7.07856
 bfs  max_validate:              7.11311
 bfs  mean_validate:             7.07145
 bfs  stddev_validate:           0.0127126
+[mpiexec@osd3] Sending Ctrl-C to processes as requested
+[mpiexec@osd3] Press Ctrl-C again to force abort

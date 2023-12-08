@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+4.610: bigfileset populated: 8388608 files, avg. dir. width = 1000000, avg. dir. depth = 1.2, 0 leafdirs, 262169.726MB total size
+4.610: Removing bigfileset tree (if exists)
+13.020: Pre-allocating directories in bigfileset tree
+13.020: Pre-allocating files in bigfileset tree
+273.530: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+273.530: Population and pre-allocation of filesets completed
+273.530: Starting 1 filereader instances
+274.534: Running...
+334.540: Run took 60 seconds...
+334.541: Per-Operation Breakdown
+closefile4           600530ops    10008ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.093ms]
+readfile4            600530ops    10008ops/s 312.8mb/s    0.028ms/op [0.004ms - 144.666ms]
+openfile4            600530ops    10008ops/s   0.0mb/s    0.004ms/op [0.002ms - 0.223ms]
+closefile3           600530ops    10008ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.118ms]
+fsyncfile3           600532ops    10008ops/s   0.0mb/s    0.094ms/op [0.001ms - 19.111ms]
+appendfilerand3      600534ops    10008ops/s  78.2mb/s    0.038ms/op [0.002ms - 25.194ms]
+readfile3            600534ops    10008ops/s 313.6mb/s    0.028ms/op [0.005ms - 144.607ms]
+openfile3            600534ops    10008ops/s   0.0mb/s    0.004ms/op [0.002ms - 0.310ms]
+closefile2           600534ops    10008ops/s   0.0mb/s    0.001ms/op [0.001ms - 0.055ms]
+fsyncfile2           600535ops    10008ops/s   0.0mb/s    0.099ms/op [0.016ms - 234.996ms]
+appendfilerand2      600535ops    10008ops/s  78.2mb/s    0.051ms/op [0.010ms - 258.842ms]
+createfile2          600535ops    10008ops/s   0.0mb/s    0.056ms/op [0.011ms - 144.609ms]
+deletefile1          600535ops    10008ops/s   0.0mb/s    0.055ms/op [0.018ms - 34.382ms]
+334.541: IO Summary: 7806928 ops 130101.500 ops/s 20016/20016 rd/wr 782.8mb/s 0.035ms/op
+334.541: Shutting down processes

@@ -1,0 +1,29 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 1545MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+0.050: bigfileset populated: 102400 files, avg. dir. width = 1000000, avg. dir. depth = 0.8, 0 leafdirs, 3202.118MB total size
+0.050: Removing bigfileset tree (if exists)
+119.649: Pre-allocating directories in bigfileset tree
+119.649: Pre-allocating files in bigfileset tree
+122.303: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+122.303: Population and pre-allocation of filesets completed
+122.303: Starting 1 filereader instances
+123.312: Running...
+183.318: Run took 60 seconds...
+183.330: Per-Operation Breakdown
+closefile4           1192791ops    19879ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.199ms]
+readfile4            1192791ops    19879ops/s 329.4mb/s    0.027ms/op [0.001ms - 113.058ms]
+openfile4            1192791ops    19879ops/s   0.0mb/s    0.021ms/op [0.002ms - 8.037ms]
+closefile3           1192791ops    19879ops/s   0.0mb/s    0.001ms/op [0.000ms - 0.577ms]
+fsyncfile3           1192825ops    19879ops/s   0.0mb/s    1.563ms/op [0.002ms - 33.059ms]
+appendfilerand3      1192828ops    19879ops/s 155.3mb/s    0.080ms/op [0.001ms - 38.032ms]
+readfile3            1192828ops    19879ops/s 329.7mb/s    0.027ms/op [0.001ms - 113.339ms]
+openfile3            1192828ops    19879ops/s   0.0mb/s    0.020ms/op [0.002ms - 15.982ms]
+closefile2           1192828ops    19879ops/s   0.0mb/s    0.001ms/op [0.000ms - 1.427ms]
+fsyncfile2           1192850ops    19880ops/s   0.0mb/s    1.238ms/op [0.002ms - 184.256ms]
+appendfilerand2      1192852ops    19880ops/s 155.3mb/s    0.038ms/op [0.001ms - 26.334ms]
+createfile2          1192863ops    19880ops/s   0.0mb/s    0.522ms/op [0.010ms - 115.265ms]
+deletefile1          1192889ops    19880ops/s   0.0mb/s    1.275ms/op [0.016ms - 115.413ms]
+183.330: IO Summary: 15506755 ops 258428.839 ops/s 39758/39759 rd/wr 969.7mb/s 0.370ms/op
+183.330: Shutting down processes
